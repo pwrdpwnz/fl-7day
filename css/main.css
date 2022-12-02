@@ -1,0 +1,121 @@
+#exchanger .currencies-list .items-list #btc,
+#exchanger .currencies-list .items-list #advcash_rub,
+#exchanger .currencies-list .items-list .item,
+#exchanger .currencies-list .items-list #all_bank_rub,
+#exchanger .currencies-list .items-list #pochta_bank_rub,
+#exchanger .currencies-list .items-list #yandex_rub {
+	display: none;
+}
+
+.block_xchdata_ico {
+	display: inline !important;
+}
+
+#ico-right {
+	display: inline-block;
+	background: no-repeat;
+	padding: 20px;
+}
+
+.item-left {
+	display: flex;
+	align-items: center;
+}
+
+
+
+
+:root {
+	--marquee-width: 80vw;
+	--marquee-height: 20vh;
+	/* --marquee-elements: 12; */
+	/* defined with JavaScript */
+	--marquee-elements-displayed: 5;
+	--marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
+	--marquee-animation-duration: calc(var(--marquee-elements) * 3s);
+}
+
+.marquee {
+	width: var(--marquee-width);
+	
+	color: #eee;
+	overflow: hidden;
+	position: relative;
+}
+
+.marquee:before,
+.marquee:after {
+	position: absolute;
+	top: 0;
+	width: 10rem;
+	height: 100%;
+	content: "";
+	z-index: 1;
+}
+
+.marquee:before {
+	left: 0;
+	
+}
+
+.marquee:after {
+	right: 0;
+	
+}
+
+.marquee-content {
+	list-style: none;
+	height: 100%;
+	display: flex;
+	animation: scrolling var(--marquee-animation-duration) linear infinite;
+}
+
+/* .marquee-content:hover {
+  animation-play-state: paused;
+} */
+@keyframes scrolling {
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements)));
+	}
+}
+
+.marquee__item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* text-align: center; */
+	flex-shrink: 0;
+	width: var(--marquee-element-width);
+	max-height: 100%;
+	font-size: calc(var(--marquee-height)*3/4);
+	/* 5rem; */
+	white-space: nowrap;
+	font-size: 15px;
+}
+
+.marquee-content li img {
+	width: 100%;
+	/* height: 100%; */
+	border: 2px solid #eee;
+}
+
+@media (max-width: 600px) {
+	html {
+		font-size: 12px;
+	}
+
+	:root {
+		--marquee-width: 100vw;
+		--marquee-height: 16vh;
+		--marquee-elements-displayed: 3;
+	}
+
+	.marquee:before,
+	.marquee:after {
+		width: 5rem;
+	}
+}
